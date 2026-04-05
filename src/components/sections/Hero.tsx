@@ -82,9 +82,9 @@ export function Hero() {
              <img 
                src="/modibhai.jpeg" 
                alt="Subhash Chand Portrait" 
-               className="w-full h-full object-cover filter grayscale contrast-[1.4] opacity-70 group-hover:opacity-100 group-hover:grayscale-[0.5] transition-all duration-500 mix-blend-lighten" 
+               className="w-full h-full object-cover object-top transition-all duration-500" 
              />
-             <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] pointer-events-none" />
+             <div className="absolute inset-0 shadow-[inset_0_0_15px_rgba(0,0,0,0.4)] pointer-events-none" />
           </div>
 
           <div className="flex flex-col gap-6 z-20">
