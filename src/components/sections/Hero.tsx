@@ -10,6 +10,23 @@ export function Hero() {
 
   return (
     <section className="relative flex flex-col items-start justify-center min-h-[100dvh] px-4 md:px-12 lg:px-24 overflow-hidden pt-20">
+      {/* Background Image - bgside.jpg with cinematic Ken Burns animation */}
+      <motion.div
+        className="absolute inset-0 z-0 pointer-events-none"
+        initial={{ scale: 1.1, x: 30 }}
+        animate={{ scale: [1.1, 1.2, 1.1], x: [30, -20, 30], y: [0, -15, 0] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+          style={{ backgroundImage: "url('/bgside.jpg')" }}
+        />
+      </motion.div>
+
+      {/* Gradient overlay for text readability */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#050505] via-[#050505]/90 to-[#050505]/30 pointer-events-none" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/60 pointer-events-none" />
+
       <HeroCanvas />
 
       {/* Marquee Ticker */}
@@ -22,8 +39,6 @@ export function Hero() {
           {Array(20).fill("JUSTICE IS A METICULOUS PROCESS OF PROCEDURAL INTEGRITY. /// ").join("")}
         </motion.div>
       </div>
-
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent pointer-events-none" />
 
       <motion.div 
         style={{ y, opacity }}
