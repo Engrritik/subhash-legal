@@ -81,7 +81,7 @@ export function Hero() {
             </p>
 
             <a
-              href="/Subhash_Chand_CV.pdf"
+              href="/subhash-cv.pdf"
               download="Subhash_Chand_CV.pdf"
               className="inline-flex max-w-max items-center justify-center relative px-8 py-4 font-sans font-bold tracking-[0.2em] text-white border border-white/20 hover:border-legal-gold tech-bracket transition-all duration-300 rounded-none bg-[#0a0a0a]/50 glitch-hover"
             >
