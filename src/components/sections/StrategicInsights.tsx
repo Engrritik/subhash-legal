@@ -60,7 +60,7 @@ export function StrategicInsights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex flex-col lg:flex-row gap-8 lg:gap-16 p-8 md:p-12 bg-[#111111]/30 backdrop-blur-md rounded-md border border-white/5 hover:border-legal-gold/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+              className="group relative flex flex-col lg:flex-row gap-8 lg:gap-16 p-8 md:p-12 bg-[#111111]/30 backdrop-blur-md rounded-md border border-white/5 hover:border-legal-gold hover:-translate-y-2 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
             >
               <div className="lg:w-1/3 shrink-0">
                 <div className="text-legal-gold font-sans tracking-[0.2em] text-xs font-bold uppercase mb-4">

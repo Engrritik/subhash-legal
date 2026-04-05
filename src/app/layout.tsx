@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Space_Mono, Syne } from "next/font/google";
 import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Subhash Chand | Strategic Criminal Defense",
-  description: "7th Semester BALLB. 6+ Court Residencies. Criminal Litigation Specialist.",
+  description: "Final Year Candidate. 6+ Court Residencies. Criminal Litigation Specialist.",
+  icons: {
+    icon: "/profile-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${spaceMono.variable} ${syne.variable} h-full antialiased`}
     >
-      <body className="font-sans min-h-full flex flex-col bg-slate-950 text-slate-200 selection:bg-legal-gold selection:text-slate-950">
+      <body className="font-sans min-h-full flex flex-col bg-[#050505] text-white selection:bg-legal-gold selection:text-[#050505]">
         <SmoothScroll>
           {children}
         </SmoothScroll>

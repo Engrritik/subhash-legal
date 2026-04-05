@@ -39,13 +39,12 @@ export function Footer() {
         </div>
 
         <div className="w-full lg:w-1/2 glass p-8 md:p-12 lg:p-16 rounded-sm">
-          <motion.form
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
             className="flex flex-col gap-10"
-            onSubmit={(e) => e.preventDefault()}
           >
             <div>
               <label className="block text-white/50 text-xs uppercase tracking-widest mb-3">Full Name</label>
@@ -55,10 +54,10 @@ export function Footer() {
               <label className="block text-white/50 text-xs uppercase tracking-widest mb-3">Legal Issue</label>
               <input type="text" className="w-full bg-transparent border-b border-white/20 pb-3 text-white text-lg outline-none focus:border-legal-gold transition-colors" />
             </div>
-            <button type="submit" className="self-start mt-6 px-10 py-5 bg-legal-gold text-[#0A0A0A] font-bold tracking-[0.2em] text-xs uppercase hover:bg-white hover:scale-105 transition-all duration-500 rounded-none shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-              Request Consultation
-            </button>
-          </motion.form>
+            <a href="mailto:subhi6853@gmail.com?subject=Strategic%20Defense%20Inquiry" className="self-start mt-6 inline-flex items-center justify-center px-10 py-5 bg-legal-gold text-[#0A0A0A] font-bold tracking-[0.2em] text-xs uppercase transition-all duration-300 rounded-none shadow-[0_0_20px_rgba(212,175,55,0.2)] tech-bracket glitch-hover">
+              [ TRANSMIT INQUIRY ]
+            </a>
+          </motion.div>
         </div>
       </div>
       <div className="mt-32 text-center text-white/30 font-sans text-xs tracking-widest uppercase">
