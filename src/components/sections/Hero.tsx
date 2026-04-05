@@ -1,65 +1,79 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { HeroCanvas } from "@/components/canvas/HeroCanvas";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[100dvh] px-4 overflow-hidden pt-20">
-      {/* Abstract Blueprint Background */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none flex items-center justify-center mix-blend-screen">
-        <svg
-          width="100%"
-          height="100%"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="blueprint" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="transparent" stroke="#B8860B" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#blueprint)" />
-        </svg>
-      </div>
+    <section className="relative flex flex-col items-start justify-center min-h-[100dvh] px-4 md:px-12 lg:px-24 overflow-hidden pt-20">
+      <HeroCanvas />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto text-center">
+      {/* Extreme Premium Gradient Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-[40vh] z-0 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
+
+      <motion.div 
+        style={{ y, opacity }}
+        className="relative z-10 w-full max-w-7xl text-left"
+      >
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-slate-100 mb-8 leading-[1.1] tracking-tight">
-            Subhash Chand<br />
-            <span className="text-3xl md:text-5xl lg:text-6xl text-gradient block mt-4">Strategic Criminal Defense & Advocacy</span>
-          </h1>
+          <div className="overflow-hidden mb-[-20px] md:mb-[-40px]">
+            <motion.h1 
+              initial={{ y: "100%", skewY: 5 }}
+              animate={{ y: "0%", skewY: 0 }}
+              transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-serif text-white leading-[0.85] tracking-tighter mix-blend-difference"
+            >
+              SUBHASH
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden mb-12">
+            <motion.h1 
+              initial={{ y: "100%", skewY: 5 }}
+              animate={{ y: "0%", skewY: 0 }}
+              transition={{ duration: 1.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-serif text-white/40 leading-[0.85] tracking-tighter"
+            >
+              CHAND<span className="text-legal-gold">.</span>
+            </motion.h1>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.4 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-end"
         >
-          <p className="text-balance text-lg md:text-2xl font-sans text-slate-400 mb-12 tracking-wide font-light max-w-3xl mx-auto">
-            7th Semester BALLB | 6+ Court Residencies | Criminal Litigation Specialist
+          <p className="text-xl md:text-2xl font-sans text-neutral-300 tracking-wide font-light max-w-2xl border-l-[3px] border-legal-gold pl-6 leading-relaxed">
+            7th Semester BALLB at <span className="text-white font-medium">Sant Baba Bhag Singh University, Punjab.</span> <br/>
+            Strategic Criminal Defense & Advocacy. <br/>
+            <span className="text-legal-gold italic font-serif text-2xl md:text-3xl mt-2 inline-block">6+ Court Residencies.</span>
           </p>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
           <a
             href="#experience"
-            className="inline-flex items-center justify-center relative px-8 py-4 font-sans font-medium tracking-[0.2em] text-slate-950 bg-legal-gold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] gold-glow overflow-hidden"
+            className="inline-flex items-center justify-center relative px-12 py-5 font-sans font-medium tracking-[0.3em] text-white border border-white/20 hover:border-legal-gold transition-all duration-700 hover:scale-[1.03] active:scale-[0.98] rounded-full overflow-hidden group"
           >
-            <span className="relative z-10">EXPLORE EXPERIENCE</span>
-            <span className="absolute inset-0 bg-white opacity-0 hover:opacity-10 transition-opacity z-0" />
+            <span className="relative z-10 text-xs md:text-sm group-hover:text-black transition-colors duration-500">EXPLORE DISCOVERY</span>
+            
+            <motion.div 
+              className="absolute inset-0 bg-legal-gold"
+              initial={{ y: "100%" }}
+              whileHover={{ y: "0%" }}
+              transition={{ duration: 0.5, ease: "circOut" }}
+            />
           </a>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
