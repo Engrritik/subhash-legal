@@ -51,27 +51,40 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-end"
+          className="flex flex-col md:flex-row gap-8 md:gap-14 items-start md:items-center mt-6"
         >
-          <p className="text-xl md:text-2xl font-sans text-neutral-300 tracking-wide font-light max-w-2xl border-l-[3px] border-legal-gold pl-6 leading-relaxed">
-            Criminal Defense Strategist & Legal Consultant at <span className="text-white font-medium">Sant Baba Bhag Singh University, Punjab.</span> <br/>
-            Specializing in Strategic Litigation and Procedural Integrity. <br/>
-            <span className="text-legal-gold italic font-serif text-2xl md:text-3xl mt-2 inline-block">Final Year Candidate. 6+ Court Residencies.</span>
-          </p>
+          {/* Profile Picture Focal Point */}
+          <div className="shrink-0 relative w-32 h-32 md:w-40 md:h-40 rounded-full border border-legal-gold/30 p-1 group">
+             <img 
+               src="/modi.jpeg" 
+               alt="Subhash Chand Portrait" 
+               className="w-full h-full object-cover rounded-full filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" 
+             />
+             <div className="absolute inset-0 rounded-full shadow-[0_0_30px_rgba(212,175,55,0.15)] pointer-events-none" />
+          </div>
 
-          <a
-            href="/Subhash_Chand_CV.pdf"
-            className="inline-flex items-center justify-center relative px-12 py-5 font-sans font-medium tracking-[0.2em] text-white border border-legal-gold hover:bg-legal-gold transition-all duration-700 hover:scale-[1.03] active:scale-[0.98] rounded-none overflow-hidden group"
-          >
-            <span className="relative z-10 text-xs md:text-sm group-hover:text-black transition-colors duration-500">DOWNLOAD STRATEGIC DOSSIER (CV)</span>
-            
-            <motion.div 
-              className="absolute inset-0 bg-legal-gold"
-              initial={{ y: "100%" }}
-              whileHover={{ y: "0%" }}
-              transition={{ duration: 0.5, ease: "circOut" }}
-            />
-          </a>
+          <div className="flex flex-col gap-6">
+            <p className="text-xl md:text-2xl font-sans text-neutral-300 tracking-wide font-light max-w-2xl border-l-[3px] border-legal-gold pl-6 leading-relaxed">
+              Criminal Defense Strategist & Legal Consultant at <span className="text-white font-medium">Sant Baba Bhag Singh University, Punjab.</span> <br/>
+              Specializing in Strategic Litigation and Procedural Integrity. <br/>
+              <span className="text-legal-gold italic font-serif text-xl md:text-2xl mt-2 inline-block">Final Year Candidate. 6+ Court Residencies.</span>
+            </p>
+
+            <a
+              href="/subhash-cv.pdf"
+              download="Subhash_Chand_CV.pdf"
+              className="inline-flex max-w-max items-center justify-center relative px-10 py-4 font-sans font-medium tracking-[0.2em] text-white border border-legal-gold hover:bg-legal-gold transition-all duration-700 hover:scale-[1.03] active:scale-[0.98] rounded-none overflow-hidden group"
+            >
+              <span className="relative z-10 text-xs md:text-sm group-hover:text-black transition-colors duration-500">DOWNLOAD STRATEGIC DOSSIER (CV)</span>
+              
+              <motion.div 
+                className="absolute inset-0 bg-legal-gold"
+                initial={{ y: "100%" }}
+                whileHover={{ y: "0%" }}
+                transition={{ duration: 0.5, ease: "circOut" }}
+              />
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </section>
