@@ -5,12 +5,12 @@ import { useRef } from "react";
 
 const residencies = [
   {
-    location: "Palampur Court",
+    location: "Shimla High Court",
     rotations: "2 Rotations | Procedural Focus",
     description: "Immersive engagement in trial procedures, structural case strategy formulation, and primary evidence assessment methodologies. Shadowed senior advocates during cross-examinations."
   },
   {
-    location: "Dharmpur Court",
+    location: "Delhi High Court",
     rotations: "2 Rotations | Documentation Focus",
     description: "Specialized in precise case filing operations, meticulous drafting of pre-trial motions, and ensuring strict adherence to procedural timelines in civil and criminal litigation."
   },

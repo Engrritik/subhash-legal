@@ -65,7 +65,7 @@ export function Hero() {
           {/* Profile Picture Focal Point - Technical Noir Edition */}
           <div className="shrink-0 relative w-32 h-32 md:w-40 md:h-40 p-2 group tech-bracket bg-[#111] z-20">
              <img 
-               src="/profile-icon.png" 
+               src="/modibhai.jpeg" 
                alt="Subhash Chand Portrait" 
                className="w-full h-full object-cover filter grayscale contrast-[1.4] opacity-70 group-hover:opacity-100 group-hover:grayscale-[0.5] transition-all duration-500 mix-blend-lighten" 
              />
@@ -77,6 +77,7 @@ export function Hero() {
               [ ROLE: Criminal Defense Strategist & Legal Consultant ] <br/>
               [ LOC:  Sant Baba Bhag Singh University, Punjab ] <br/>
               Specializing in Strategic Litigation and Procedural Integrity. <br/>
+              [ SUB: Indian Constitution of India 1949, BNS, BSA, BNSS, Limitation Act 1963, Transfer of Property Act 1882 ] <br/>
               <span className="text-white mt-4 inline-block font-bold">&gt;&gt; Final Year Candidate. 6+ Court Residencies.</span>
             </p>
 
